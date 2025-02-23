@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="hse.exam.extremeprogrammingcookbook.view.Controller"
+            fx:id="rootBorderPane"
+>
+    <stylesheets>
+        <URL value="@../styles.css" />
+    </stylesheets>
+    <top>
+        <StackPane>
+            <HBox alignment="CENTER"
+                  style="-fx-background-color: blue; -fx-padding: 10px; -fx-spacing: 10px;" >
+                <Button text="Add recipe"
+                        onAction="#seeAddRecipeMenu"
+                />
+<!--                <Label text="Filter by ingredient"/>-->
+<!--                <ComboBox>-->
+<!--                    <items>-->
+<!--                        <FXCollections fx:factory="observableArrayList">-->
+<!--                            <String fx:value="Chicken"/>-->
+<!--                            <String fx:value="Potato"/>-->
+<!--                            <String fx:value="Banana"/>-->
+<!--                            <String fx:value="Water"/>-->
+<!--                        </FXCollections>-->
+<!--                    </items>-->
+<!--                </ComboBox>-->
+                <Button text="Save all recipes"
+                        onAction="#saveRecipes"
+                />
+            </HBox>
+        </StackPane>
+    </top>
+    <center>
+        <StackPane style="-fx-background-color: green;">
+            <VBox alignment="CENTER"
+                  style="-fx-background-color: green;"
+                  fx:id="recipeViewContainer">
+                <ScrollPane fitToHeight="true"
+                            fitToWidth="true"
+                            prefWidth="700.0"
+                            style="-fx-background-color: green"
+                >
+                    <HBox alignment="CENTER" style="-fx-background-color: green">
+                        <TilePane fx:id="recipesTilePane" prefColumns="1" vgap="10"
+                                  style="-fx-background-color: green; -fx-padding: 1px;">
+                        </TilePane>
+                    </HBox>
+                </ScrollPane>
+            </VBox>
+            <HBox fx:id="recipeAddContainer" visible="false" alignment="CENTER">
+                <VBox style="-fx-background-color: green" alignment="CENTER">
+                    <Button text="Go back to browsing recipes" onAction="#goBackToRecipeListMenu"/>
+                    <TextField fx:id="recipeTitle" promptText="Recipe Title" prefWidth="40"/>
+                    <TextArea fx:id="recipeDescription" prefRowCount="5" prefWidth="200"/>
+                    <Button text="Save recipe" onAction="#onClickBtnAddRecipe"/>
+                </VBox>
+            </HBox>
+
+            <VBox fx:id="singleRecipeViewBox" visible="false" style="-fx-background-color: white"
+                  maxHeight="300"
+                  maxWidth="200"
+            >
+                <Label fx:id="singleRecipeTitle" style="-fx-font-weight: bold;"/>
+                <Label fx:id="singleRecipeDescription" wrapText="true"/>
+            </VBox>
+        </StackPane>
+
+    </center>
+    <bottom>
+        <Region style="-fx-background-color: brown;" BorderPane.alignment="CENTER"/>
+    </bottom>
+</BorderPane>
