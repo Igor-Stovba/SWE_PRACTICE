@@ -19,4 +19,5 @@ of the shift? Will they stay attached to the zone until the end or not?
 
 
 ### 3.
-![BPMN Dialog Diagram](images/SD3.png)
+Manager, Chief, Bookkeeper and Control department get reports which is not connected to the main repairing event in time
+![BPMN Dialog Diagram](images/BPMN.png)
